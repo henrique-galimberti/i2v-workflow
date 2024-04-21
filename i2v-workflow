@@ -1193,81 +1193,6 @@
       "bgcolor": "#000"
     },
     {
-      "id": 220,
-      "type": "ADE_ApplyAnimateLCMI2VModel",
-      "pos": [
-        1306.467463788237,
-        136.14055242201457
-      ],
-      "size": {
-        "0": 285.6000061035156,
-        "1": 250
-      },
-      "flags": {},
-      "order": 32,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "motion_model",
-          "type": "MOTION_MODEL_ADE",
-          "link": 710
-        },
-        {
-          "name": "ref_latent",
-          "type": "LATENT",
-          "link": 796
-        },
-        {
-          "name": "motion_lora",
-          "type": "MOTION_LORA",
-          "link": null
-        },
-        {
-          "name": "scale_multival",
-          "type": "MULTIVAL",
-          "link": null
-        },
-        {
-          "name": "effect_multival",
-          "type": "MULTIVAL",
-          "link": null
-        },
-        {
-          "name": "ad_keyframes",
-          "type": "AD_KEYFRAMES",
-          "link": null
-        },
-        {
-          "name": "prev_m_models",
-          "type": "M_MODELS",
-          "link": 678
-        }
-      ],
-      "outputs": [
-        {
-          "name": "M_MODELS",
-          "type": "M_MODELS",
-          "links": [
-            679,
-            802
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ADE_ApplyAnimateLCMI2VModel"
-      },
-      "widgets_values": [
-        0,
-        true,
-        0,
-        0.2
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 235,
       "type": "Color Correct (mtb)",
       "pos": [
@@ -2185,139 +2110,11 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "2024-03-20-220434_ponyDiffusionV6XL_v6StartWithThisOne_3042901309_euler_ancestral.karras.25_cfg7.0_USX_FD.jpg",
+        "more-sexy-cyborgs-for-your-entertainment-v0-z20zp3r27svc1.webp",
         "image"
       ],
       "color": "#432",
       "bgcolor": "#653"
-    },
-    {
-      "id": 111,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        1623,
-        1091
-      ],
-      "size": [
-        480,
-        916.1025641025641
-      ],
-      "flags": {},
-      "order": 46,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 797
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "title": "Final Output",
-      "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": {
-        "frame_rate": 24,
-        "loop_count": 0,
-        "filename_prefix": "%date:yyMMdd%_ADU",
-        "format": "image/gif",
-        "pingpong": false,
-        "save_output": false,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "240421_ADU_00068.gif",
-            "subfolder": "",
-            "type": "temp",
-            "format": "image/gif"
-          }
-        }
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 76,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        1126,
-        1094
-      ],
-      "size": [
-        480,
-        916.1025641025641
-      ],
-      "flags": {},
-      "order": 36,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 222
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "type": "VHS_BatchManager",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "title": "Animation Preview",
-      "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": {
-        "frame_rate": 8,
-        "loop_count": 0,
-        "filename_prefix": "%date:yyMMdd%_AD",
-        "format": "image/gif",
-        "pingpong": false,
-        "save_output": false,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "240421_AD_00088.gif",
-            "subfolder": "",
-            "type": "temp",
-            "format": "image/gif"
-          }
-        }
-      },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
     },
     {
       "id": 307,
@@ -2398,100 +2195,6 @@
         null,
         null
       ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 116,
-      "type": "ADE_MultivalDynamic",
-      "pos": [
-        145,
-        1350
-      ],
-      "size": [
-        210,
-        58
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "mask_optional",
-          "type": "MASK",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MULTIVAL",
-          "type": "MULTIVAL",
-          "links": [
-            675
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "title": "Increses motion (1.3 max)",
-      "properties": {
-        "Node name for S&R": "ADE_MultivalDynamic"
-      },
-      "widgets_values": [
-        1
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 309,
-      "type": "Fast Bypasser (rgthree)",
-      "pos": {
-        "0": 149,
-        "1": 1658,
-        "2": 0,
-        "3": 0,
-        "4": 0,
-        "5": 0,
-        "6": 0,
-        "7": 0,
-        "8": 0,
-        "9": 0
-      },
-      "size": [
-        434.66393776970335,
-        78
-      ],
-      "flags": {},
-      "order": 34,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "Apply AnimateLCM-I2V Model 🎭🅐🅓②",
-          "type": "*",
-          "link": 802,
-          "dir": 3
-        },
-        {
-          "name": "",
-          "type": "*",
-          "link": null,
-          "dir": 3
-        }
-      ],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": [],
-          "dir": 4,
-          "slot_index": 0
-        }
-      ],
-      "title": "Enable i2v Model (Increases Fidelity to Initial Image)",
-      "properties": {
-        "toggleRestriction": "default"
-      },
       "color": "#432",
       "bgcolor": "#653"
     },
@@ -2600,6 +2303,311 @@
       },
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 309,
+      "type": "Fast Bypasser (rgthree)",
+      "pos": {
+        "0": 149,
+        "1": 1658,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [
+        434.66393776970335,
+        78
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Apply AnimateLCM-I2V Model 🎭🅐🅓②",
+          "type": "*",
+          "link": 802,
+          "dir": 3
+        },
+        {
+          "name": "",
+          "type": "*",
+          "link": null,
+          "dir": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": [],
+          "dir": 4,
+          "slot_index": 0
+        }
+      ],
+      "title": "Enable i2v Model (Increases Fidelity to Initial Image)",
+      "properties": {
+        "toggleRestriction": "default"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 220,
+      "type": "ADE_ApplyAnimateLCMI2VModel",
+      "pos": [
+        1306.467463788237,
+        136.14055242201457
+      ],
+      "size": {
+        "0": 285.6000061035156,
+        "1": 250
+      },
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "motion_model",
+          "type": "MOTION_MODEL_ADE",
+          "link": 710
+        },
+        {
+          "name": "ref_latent",
+          "type": "LATENT",
+          "link": 796
+        },
+        {
+          "name": "motion_lora",
+          "type": "MOTION_LORA",
+          "link": null
+        },
+        {
+          "name": "scale_multival",
+          "type": "MULTIVAL",
+          "link": null
+        },
+        {
+          "name": "effect_multival",
+          "type": "MULTIVAL",
+          "link": null
+        },
+        {
+          "name": "ad_keyframes",
+          "type": "AD_KEYFRAMES",
+          "link": null
+        },
+        {
+          "name": "prev_m_models",
+          "type": "M_MODELS",
+          "link": 678
+        }
+      ],
+      "outputs": [
+        {
+          "name": "M_MODELS",
+          "type": "M_MODELS",
+          "links": [
+            679,
+            802
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_ApplyAnimateLCMI2VModel"
+      },
+      "widgets_values": [
+        0,
+        true,
+        0,
+        0.1
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 116,
+      "type": "ADE_MultivalDynamic",
+      "pos": [
+        145,
+        1350
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask_optional",
+          "type": "MASK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MULTIVAL",
+          "type": "MULTIVAL",
+          "links": [
+            675
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Increses motion (1.3 max)",
+      "properties": {
+        "Node name for S&R": "ADE_MultivalDynamic"
+      },
+      "widgets_values": [
+        1.1
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 76,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1126,
+        1094
+      ],
+      "size": [
+        480,
+        945.0731707317073
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 222
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Animation Preview",
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "%date:yyMMdd%_AD",
+        "format": "video/nvenc_h264-mp4",
+        "pix_fmt": "yuv420p",
+        "bitrate": 10,
+        "megabit": true,
+        "save_metadata": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "240421_AD_00100.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/nvenc_h264-mp4"
+          }
+        }
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 111,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1623,
+        1091
+      ],
+      "size": [
+        480,
+        945.0731707317073
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 797
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Final Output",
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "%date:yyMMdd%_ADU",
+        "format": "video/nvenc_h264-mp4",
+        "pix_fmt": "yuv420p",
+        "bitrate": 10,
+        "megabit": true,
+        "save_metadata": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "240421_ADU_00080.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/nvenc_h264-mp4"
+          }
+        }
+      },
+      "color": "#223",
+      "bgcolor": "#335"
     }
   ],
   "links": [
