@@ -2032,49 +2032,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 305,
-      "type": "RepeatLatentBatch",
-      "pos": [
-        376.7999786376954,
-        1348.9990234374986
-      ],
-      "size": [
-        210,
-        58
-      ],
-      "flags": {},
-      "order": 31,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 790
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            789,
-            796
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "title": "Frames To Generate",
-      "properties": {
-        "Node name for S&R": "RepeatLatentBatch"
-      },
-      "widgets_values": [
-        24
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 209,
       "type": "LoadImage",
       "pos": [
@@ -2110,43 +2067,8 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "more-sexy-cyborgs-for-your-entertainment-v0-z20zp3r27svc1.webp",
+        "college-is-kinda-fun-v0-8091zfenxivc1.webp",
         "image"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 307,
-      "type": "FloatConstant",
-      "pos": [
-        148,
-        1449
-      ],
-      "size": [
-        200,
-        58
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "value",
-          "type": "FLOAT",
-          "links": [
-            800
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "title": "AnimateDiff Denoise",
-      "properties": {
-        "Node name for S&R": "FloatConstant"
-      },
-      "widgets_values": [
-        0.9
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -2171,7 +2093,7 @@
         130
       ],
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2443,7 +2365,7 @@
         58
       ],
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -2482,7 +2404,7 @@
       ],
       "size": [
         480,
-        945.0731707317073
+        919.4285714285714
       ],
       "flags": {},
       "order": 36,
@@ -2531,7 +2453,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "240421_AD_00100.mp4",
+            "filename": "240421_AD_00111.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/nvenc_h264-mp4"
@@ -2550,7 +2472,7 @@
       ],
       "size": [
         480,
-        945.0731707317073
+        919.4285714285714
       ],
       "flags": {},
       "order": 46,
@@ -2599,7 +2521,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "240421_ADU_00080.mp4",
+            "filename": "240421_ADU_00091.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/nvenc_h264-mp4"
@@ -2608,6 +2530,84 @@
       },
       "color": "#223",
       "bgcolor": "#335"
+    },
+    {
+      "id": 307,
+      "type": "FloatConstant",
+      "pos": [
+        148,
+        1449
+      ],
+      "size": [
+        200,
+        58
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "value",
+          "type": "FLOAT",
+          "links": [
+            800
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "AnimateDiff Denoise",
+      "properties": {
+        "Node name for S&R": "FloatConstant"
+      },
+      "widgets_values": [
+        0.9
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 305,
+      "type": "RepeatLatentBatch",
+      "pos": [
+        376.7999786376954,
+        1348.9990234374986
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 790
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            789,
+            796
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Frames To Generate",
+      "properties": {
+        "Node name for S&R": "RepeatLatentBatch"
+      },
+      "widgets_values": [
+        20
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
