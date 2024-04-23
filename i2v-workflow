@@ -1,6 +1,6 @@
 {
   "last_node_id": 334,
-  "last_link_id": 842,
+  "last_link_id": 844,
   "nodes": [
     {
       "id": 229,
@@ -809,7 +809,6 @@
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            514,
             519
           ],
           "shape": 3,
@@ -1304,7 +1303,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 39,
+      "order": 38,
       "mode": 0,
       "inputs": [
         {
@@ -1515,7 +1514,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "240422_AD_00036.mp4",
+            "filename": "240422_AD_00037.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/nvenc_h264-mp4"
@@ -1613,7 +1612,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 40,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
@@ -1802,7 +1801,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 41,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -1871,7 +1870,7 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "who-are-you-joining-for-a-swim-v0-ui1entchlvvc1.webp",
+        "in-need-of-some-cardio-v0-lldvwzqchlvc1.webp",
         "image"
       ],
       "color": "#432",
@@ -1935,7 +1934,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "240422_ADU_00032.mp4",
+            "filename": "240422_ADU_00033.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/nvenc_h264-mp4"
@@ -1996,124 +1995,6 @@
       },
       "color": "#432",
       "bgcolor": "#653"
-    },
-    {
-      "id": 82,
-      "type": "KSampler (Efficient)",
-      "pos": [
-        665,
-        605
-      ],
-      "size": {
-        "0": 220,
-        "1": 346
-      },
-      "flags": {},
-      "order": 42,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 514
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 720
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 721
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 235
-        },
-        {
-          "name": "optional_vae",
-          "type": "VAE",
-          "link": 283
-        },
-        {
-          "name": "script",
-          "type": "SCRIPT",
-          "link": null,
-          "slot_index": 5
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "link": 623,
-          "widget": {
-            "name": "seed"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "CONDITIONING+",
-          "type": "CONDITIONING",
-          "links": [],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "CONDITIONING-",
-          "type": "CONDITIONING",
-          "links": [],
-          "shape": 3,
-          "slot_index": 2
-        },
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [],
-          "shape": 3,
-          "slot_index": 3
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [],
-          "shape": 3,
-          "slot_index": 4
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [],
-          "shape": 3,
-          "slot_index": 5
-        }
-      ],
-      "title": "Upscale+Refine Sampler",
-      "properties": {
-        "Node name for S&R": "KSampler (Efficient)"
-      },
-      "widgets_values": [
-        987925339165438,
-        null,
-        10,
-        1.5,
-        "lcm",
-        "sgm_uniform",
-        0.45,
-        "none",
-        "true"
-      ],
-      "color": "#323",
-      "bgcolor": "#535",
-      "shape": 1
     },
     {
       "id": 307,
@@ -2198,141 +2079,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 69,
-      "type": "KSampler (Efficient)",
-      "pos": [
-        395,
-        611
-      ],
-      "size": {
-        "0": 220,
-        "1": 342
-      },
-      "flags": {},
-      "order": 35,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 519
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 734
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 735
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 789
-        },
-        {
-          "name": "optional_vae",
-          "type": "VAE",
-          "link": 173
-        },
-        {
-          "name": "script",
-          "type": "SCRIPT",
-          "link": null
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "link": 622,
-          "widget": {
-            "name": "seed"
-          }
-        },
-        {
-          "name": "denoise",
-          "type": "FLOAT",
-          "link": 800,
-          "widget": {
-            "name": "denoise"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "CONDITIONING+",
-          "type": "CONDITIONING",
-          "links": [
-            720
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "CONDITIONING-",
-          "type": "CONDITIONING",
-          "links": [
-            721
-          ],
-          "shape": 3,
-          "slot_index": 2
-        },
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [],
-          "shape": 3,
-          "slot_index": 3
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            234
-          ],
-          "shape": 3,
-          "slot_index": 4
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            222,
-            638,
-            842
-          ],
-          "shape": 3,
-          "slot_index": 5
-        }
-      ],
-      "title": "Sampler",
-      "properties": {
-        "Node name for S&R": "KSampler (Efficient)"
-      },
-      "widgets_values": [
-        229848608991205,
-        null,
-        10,
-        1.5,
-        "lcm",
-        "sgm_uniform",
-        1,
-        "none",
-        "true"
-      ],
-      "color": "#323",
-      "bgcolor": "#535",
-      "shape": 1
-    },
-    {
       "id": 333,
       "type": "ReActorFaceSwap",
       "pos": [
@@ -2344,13 +2090,13 @@
         "1": 338
       },
       "flags": {},
-      "order": 38,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
           "name": "input_image",
           "type": "IMAGE",
-          "link": 842
+          "link": 844
         },
         {
           "name": "source_image",
@@ -2731,6 +2477,262 @@
       ],
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 69,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        395,
+        611
+      ],
+      "size": {
+        "0": 220,
+        "1": 342
+      },
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 519
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 734
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 735
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 789
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 173
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 622,
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": 800,
+          "widget": {
+            "name": "denoise"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            843
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            720
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            721
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            234
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            222,
+            638
+          ],
+          "shape": 3,
+          "slot_index": 5
+        }
+      ],
+      "title": "Sampler",
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)"
+      },
+      "widgets_values": [
+        229848608991205,
+        null,
+        10,
+        1.5,
+        "lcm",
+        "sgm_uniform",
+        1,
+        "none",
+        "true"
+      ],
+      "color": "#323",
+      "bgcolor": "#535",
+      "shape": 1
+    },
+    {
+      "id": 82,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        665,
+        605
+      ],
+      "size": {
+        "0": 220,
+        "1": 346
+      },
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 843
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 720
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 721
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 235
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 283
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null,
+          "slot_index": 5
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 623,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            844
+          ],
+          "shape": 3,
+          "slot_index": 5
+        }
+      ],
+      "title": "Upscale+Refine Sampler",
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)"
+      },
+      "widgets_values": [
+        987925339165438,
+        null,
+        10,
+        1.5,
+        "lcm",
+        "sgm_uniform",
+        0.45,
+        "none",
+        "true"
+      ],
+      "color": "#323",
+      "bgcolor": "#535",
+      "shape": 1
     }
   ],
   "links": [
@@ -2781,14 +2783,6 @@
       82,
       4,
       "VAE"
-    ],
-    [
-      514,
-      72,
-      0,
-      82,
-      0,
-      "MODEL"
     ],
     [
       519,
@@ -3271,8 +3265,16 @@
       "*"
     ],
     [
-      842,
+      843,
       69,
+      0,
+      82,
+      0,
+      "MODEL"
+    ],
+    [
+      844,
+      82,
       5,
       333,
       0,
