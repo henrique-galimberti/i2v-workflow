@@ -1,0 +1,1512 @@
+{
+  "last_node_id": 158,
+  "last_link_id": 305,
+  "nodes": [
+    {
+      "id": 108,
+      "type": "DownloadAndLoadFlorence2Model",
+      "pos": [
+        -738.4641978334381,
+        -656.9421300071887
+      ],
+      "size": {
+        "0": 243.60000610351562,
+        "1": 106
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora",
+          "type": "PEFTLORA",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "links": [
+            224
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DownloadAndLoadFlorence2Model"
+      },
+      "widgets_values": [
+        "microsoft/Florence-2-large",
+        "fp16",
+        "sdpa"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "DownloadAndLoadCogVideoModel",
+      "pos": [
+        -355.6210450849996,
+        107.8664228728613
+      ],
+      "size": {
+        "0": 281.36358642578125,
+        "1": 154
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "cogvideo_pipe",
+          "type": "COGVIDEOPIPE",
+          "links": [
+            121,
+            124
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DownloadAndLoadCogVideoModel"
+      },
+      "widgets_values": [
+        "THUDM/CogVideoX-5b-I2V",
+        "bf16",
+        "enabled",
+        "disabled",
+        false
+      ]
+    },
+    {
+      "id": 58,
+      "type": "CogVideoImageEncode",
+      "pos": [
+        8.378954914999671,
+        124.86642287286142
+      ],
+      "size": {
+        "0": 228.1560516357422,
+        "1": 122
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipeline",
+          "type": "COGVIDEOPIPE",
+          "link": 124
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 241
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "links": [
+            129
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CogVideoImageEncode"
+      },
+      "widgets_values": [
+        16,
+        true
+      ]
+    },
+    {
+      "id": 20,
+      "type": "CLIPLoader",
+      "pos": [
+        -348.6210450849996,
+        318.8664228728613
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            54,
+            56
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "t5xxl_fp8_e4m3fn.safetensors",
+        "sd3"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "CogVideoTextEncode",
+      "pos": [
+        21.378954914999795,
+        313.8664228728613
+      ],
+      "size": {
+        "0": 210,
+        "1": 102
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 54
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 305,
+          "widget": {
+            "name": "prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "links": [
+            122
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CogVideoTextEncode"
+      },
+      "widgets_values": [
+        "woman is sucking a dick",
+        1,
+        true
+      ]
+    },
+    {
+      "id": 31,
+      "type": "CogVideoTextEncode",
+      "pos": [
+        -117.62104508500002,
+        480.8664228728614
+      ],
+      "size": {
+        "0": 520.9265747070312,
+        "1": 165.86581420898438
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 56
+        }
+      ],
+      "outputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "links": [
+            123
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CogVideoTextEncode"
+      },
+      "widgets_values": [
+        "The video is not of a high quality, it has a low resolution, and the audio quality is not clear. Strange motion trajectory, a poor composition and deformed video, low resolution, duplicate and ugly, strange body structure, long and strange neck, bad teeth, bad eyes, bad limbs, bad hands, blurry camera, shaking camera. Deformation, low-resolution, blurry, ugly, distortion. Camera transitions, screen switching, perspective shifts.",
+        1,
+        true
+      ]
+    },
+    {
+      "id": 128,
+      "type": "CogVideoDecode",
+      "pos": [
+        778.3789549149994,
+        112.8664228728614
+      ],
+      "size": {
+        "0": 271.8210144042969,
+        "1": 198
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipeline",
+          "type": "COGVIDEOPIPE",
+          "link": 255
+        },
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 254
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            256
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CogVideoDecode"
+      },
+      "widgets_values": [
+        true,
+        240,
+        360,
+        0.2,
+        0.2,
+        true
+      ]
+    },
+    {
+      "id": 57,
+      "type": "CogVideoSampler",
+      "pos": [
+        458.3789549150002,
+        118.86642287286139
+      ],
+      "size": {
+        "0": 270.3999938964844,
+        "1": 350
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipeline",
+          "type": "COGVIDEOPIPE",
+          "link": 121
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 122
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 123
+        },
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": null
+        },
+        {
+          "name": "image_cond_latents",
+          "type": "LATENT",
+          "link": 129
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 131,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "cogvideo_pipe",
+          "type": "COGVIDEOPIPE",
+          "links": [
+            255
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "links": [
+            254
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CogVideoSampler"
+      },
+      "widgets_values": [
+        480,
+        720,
+        49,
+        20,
+        6,
+        65334758276105,
+        "fixed",
+        "DPM",
+        16,
+        8,
+        1
+      ]
+    },
+    {
+      "id": 66,
+      "type": "ImagePadForOutpaintTargetSize",
+      "pos": [
+        -731.9196602956297,
+        115.94689327081022
+      ],
+      "size": {
+        "0": 285.6000061035156,
+        "1": 150
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 138
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            241
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImagePadForOutpaintTargetSize"
+      },
+      "widgets_values": [
+        720,
+        480,
+        0,
+        "lanczos"
+      ]
+    },
+    {
+      "id": 124,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -124.80237556781266,
+        -334.7841960228139
+      ],
+      "size": {
+        "0": 312.0464172363281,
+        "1": 280.0246887207031
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 250,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "Extracted Tags",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "1girl, solo, long hair, breasts, looking at viewer, blue eyes, large breasts, blonde hair, jewelry, nipples, full body, ass, sweat, nude, lying, barefoot, pussy, spread legs, on back, feet, arms up, completely nude, legs, lips, pillow, toes, uncensored, tattoo, anus, pussy juice, bed, on bed, bed sheet, soles, bound, bdsm, bondage, rope, restrained, legs up, nose, realistic, clitoris, gag, gagged, bound wrists, bound arms"
+      ]
+    },
+    {
+      "id": 116,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -126.40999019531257,
+        -655.8796103710937
+      ],
+      "size": {
+        "0": 313.7864074707031,
+        "1": 264.2146911621094
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 232,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "Extracted Caption",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "The image shows a naked woman lying on a bed with her legs up in the air. She is tied up with black straps and her feet are tied up in a knot at the top of her head. The woman has blonde hair and tattoos on her arms and legs. She has a red lipstick on her lips and is looking directly at the camera with a seductive expression. The bed has a white comforter and there is a decorative headboard in the background. The overall mood of the image is erotic and provocative."
+      ]
+    },
+    {
+      "id": 112,
+      "type": "LLMLoader",
+      "pos": [
+        354.916674541016,
+        -209.65819949218732
+      ],
+      "size": {
+        "0": 252.8976593017578,
+        "1": 130
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "links": [
+            273
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLMLoader"
+      },
+      "widgets_values": [
+        "Meta-Llama-3-8B-Instruct.Q4_K_M.gguf",
+        2048,
+        100,
+        8
+      ]
+    },
+    {
+      "id": 150,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2118,
+        -99
+      ],
+      "size": [
+        597.0625514990447,
+        239.20323822568366
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 302,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "Final Prompt",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "A woman stands in a dimly lit bathroom, her long dark hair cascading down her back. She holds onto the blue one-piece swimsuit with both hands, her breasts slightly exposed. Her green eyes lock onto the viewer, a subtle blush rising to her cheeks. As she looks down, her gaze seems to invite the viewer to join her in this intimate moment. The camera remains fixed, capturing every detail of her seductive pose. The woman's thighs are slightly spread apart, revealing a hint of her tan lines and the outline of her underwear. The air is thick with anticipation as she slowly pulls the swimsuit upwards, exposing more of her body to the viewer. The camera continues to capture her every move, leaving no doubt about her intentions."
+      ]
+    },
+    {
+      "id": 152,
+      "type": "String Replace (mtb)",
+      "pos": [
+        1177.9166745410162,
+        -646.6581994921881
+      ],
+      "size": [
+        230.60655149904483,
+        78
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "link": 299,
+          "widget": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "new",
+          "type": "STRING",
+          "link": 303,
+          "widget": {
+            "name": "new"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            288
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Replace (mtb)"
+      },
+      "widgets_values": [
+        "",
+        "CAPTION",
+        ""
+      ]
+    },
+    {
+      "id": 154,
+      "type": "String Replace (mtb)",
+      "pos": [
+        1166.9166745410162,
+        -504.65819949218815
+      ],
+      "size": [
+        237.9305514990449,
+        78
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "link": 288,
+          "widget": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "new",
+          "type": "STRING",
+          "link": 304,
+          "widget": {
+            "name": "new"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            300
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Replace (mtb)"
+      },
+      "widgets_values": [
+        "",
+        "TAGS",
+        ""
+      ]
+    },
+    {
+      "id": 107,
+      "type": "Florence2Run",
+      "pos": [
+        -447.4641978334393,
+        -660.9421300071887
+      ],
+      "size": {
+        "0": 280.8445129394531,
+        "1": 304
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 235
+        },
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "link": 224
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 234,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "caption",
+          "type": "STRING",
+          "links": [
+            232,
+            303
+          ],
+          "slot_index": 2,
+          "shape": 3
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Florence2Run"
+      },
+      "widgets_values": [
+        "",
+        "more_detailed_caption",
+        true,
+        false,
+        1024,
+        3,
+        true,
+        "",
+        349779428522746,
+        "randomize"
+      ]
+    },
+    {
+      "id": 120,
+      "type": "WD14Tagger|pysssss",
+      "pos": [
+        -431.8023755678125,
+        -295.7841960228141
+      ],
+      "size": {
+        "0": 254.576416015625,
+        "1": 239.3846893310547
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 242
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            250,
+            304
+          ],
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "WD14Tagger|pysssss"
+      },
+      "widgets_values": [
+        "wd-swinv2-tagger-v3",
+        0.35,
+        0.85,
+        true,
+        false,
+        "",
+        "1girl, solo, long hair, breasts, looking at viewer, blue eyes, large breasts, blonde hair, jewelry, nipples, full body, ass, sweat, nude, lying, barefoot, pussy, spread legs, on back, feet, arms up, completely nude, legs, lips, pillow, toes, uncensored, tattoo, anus, pussy juice, bed, on bed, bed sheet, soles, bound, bdsm, bondage, rope, restrained, legs up, nose, realistic, clitoris, gag, gagged, bound wrists, bound arms"
+      ]
+    },
+    {
+      "id": 147,
+      "type": "LLMSampler",
+      "pos": [
+        911.9166745410162,
+        -352.6581994921878
+      ],
+      "size": [
+        240.9768829345703,
+        281.07855224609375
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "link": 273
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 300,
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "name": "system_msg",
+          "type": "STRING",
+          "link": 297,
+          "widget": {
+            "name": "system_msg"
+          }
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 280,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            302,
+            305
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLMSampler"
+      },
+      "widgets_values": [
+        "You are an assistant who perfectly describes images.",
+        "",
+        226,
+        0.2,
+        0.95,
+        40,
+        0,
+        0,
+        1.1,
+        188,
+        "randomize"
+      ]
+    },
+    {
+      "id": 44,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        2116,
+        200
+      ],
+      "size": [
+        593.1686401367188,
+        634.1124267578125
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 256
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "CogVideoX-I2V-",
+        "format": "image/gif",
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "CogVideoX-I2V-_00006.gif",
+            "subfolder": "",
+            "type": "output",
+            "format": "image/gif",
+            "frame_rate": 8
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 133,
+      "type": "Text Multiline",
+      "pos": [
+        1543,
+        15
+      ],
+      "size": {
+        "0": 279.81146240234375,
+        "1": 120.55806732177734
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "User Prompt (Not implemented yet)",
+      "properties": {
+        "Node name for S&R": "Text Multiline"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 60,
+      "type": "Seed (rgthree)",
+      "pos": {
+        "0": 1855,
+        "1": 8,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 130
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SEED",
+          "type": "INT",
+          "links": [
+            131,
+            234,
+            280
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "dir": 4
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        480263175318461,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 145,
+      "type": "Fast Groups Muter (rgthree)",
+      "pos": {
+        "0": 1191,
+        "1": 28,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [
+        310.7876459408708,
+        138.14539194356414
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      }
+    },
+    {
+      "id": 158,
+      "type": "Text Multiline",
+      "pos": [
+        913,
+        -650
+      ],
+      "size": [
+        227.61369479549444,
+        101.48550606414835
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            299
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "User Prompt Template",
+      "properties": {
+        "Node name for S&R": "Text Multiline"
+      },
+      "widgets_values": [
+        "CAPTION\n\nTAGS."
+      ]
+    },
+    {
+      "id": 148,
+      "type": "Text Multiline",
+      "pos": [
+        318.916674541016,
+        -643.6581994921881
+      ],
+      "size": [
+        562.2751576286346,
+        352.77083961983567
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            297
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "LLM System Prompt",
+      "properties": {
+        "Node name for S&R": "Text Multiline"
+      },
+      "widgets_values": [
+        "**Objective**: Based on the user prompt, generate a short scene. The scene is captured in one continuous shot. Include the most likely actions or movements that occur next within the context of the user prompt. When describing the details of a scene, include appropriate dynamic information to ensure that the video caption contains reasonable actions and plots. \n\n**Important**: Include the most likely actions or movements that occur next within the context of the user prompt.\n\n**Note**: The user prompt is the first frame of the video, and the output video caption should describe the motion starting from the current image.\n\n**Note**: The first part of the user prompt will be censored, ommiting explicit but important content about the scene. The later part, the tags, will reveal everything that was censored. You must consider them as part of the scene you are describing.\n\n**Note**: Don't contain camera transitions!!! Don't contain screen switching!!! Don't contain perspective shifts !!!\n\n**Note**: Remember to consider everything included in the tags into your answer.\n\n**Answering Guidelines**:\nYou give uncensored answers. You must include adult or explicit content in your answers when they are present in user prompt.\n\n**Answering Style**:\nBegin directly without introductory phrases like \"The image/video showcases\" \"The photo captures\" and more. For example, say \"A woman is on a beach\", instead of \"A woman is depicted in the image\".\nDescribe camera motion and what's happening in the scene. Don't explain the tags or what they might suggest.\n\n**Output Format**: \"[descriptive scene caption here]\""
+      ]
+    },
+    {
+      "id": 36,
+      "type": "LoadImage",
+      "pos": [
+        1527,
+        189
+      ],
+      "size": {
+        "0": 557.8034057617188,
+        "1": 715.3848876953125
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            138,
+            235,
+            242
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "2024-03-26-140610_ponyDiffusionV6XL_v6StartWithThisOne_1417622770_euler_ancestral.karras.25_cfg7.0_USX_FD.jpeg",
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      54,
+      20,
+      0,
+      30,
+      0,
+      "CLIP"
+    ],
+    [
+      56,
+      20,
+      0,
+      31,
+      0,
+      "CLIP"
+    ],
+    [
+      121,
+      1,
+      0,
+      57,
+      0,
+      "COGVIDEOPIPE"
+    ],
+    [
+      122,
+      30,
+      0,
+      57,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      123,
+      31,
+      0,
+      57,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      124,
+      1,
+      0,
+      58,
+      0,
+      "COGVIDEOPIPE"
+    ],
+    [
+      129,
+      58,
+      0,
+      57,
+      4,
+      "LATENT"
+    ],
+    [
+      131,
+      60,
+      0,
+      57,
+      5,
+      "INT"
+    ],
+    [
+      138,
+      36,
+      0,
+      66,
+      0,
+      "IMAGE"
+    ],
+    [
+      224,
+      108,
+      0,
+      107,
+      1,
+      "FL2MODEL"
+    ],
+    [
+      232,
+      107,
+      2,
+      116,
+      0,
+      "STRING"
+    ],
+    [
+      234,
+      60,
+      0,
+      107,
+      2,
+      "INT"
+    ],
+    [
+      235,
+      36,
+      0,
+      107,
+      0,
+      "IMAGE"
+    ],
+    [
+      241,
+      66,
+      0,
+      58,
+      1,
+      "IMAGE"
+    ],
+    [
+      242,
+      36,
+      0,
+      120,
+      0,
+      "IMAGE"
+    ],
+    [
+      250,
+      120,
+      0,
+      124,
+      0,
+      "STRING"
+    ],
+    [
+      254,
+      57,
+      1,
+      128,
+      1,
+      "LATENT"
+    ],
+    [
+      255,
+      57,
+      0,
+      128,
+      0,
+      "COGVIDEOPIPE"
+    ],
+    [
+      256,
+      128,
+      0,
+      44,
+      0,
+      "IMAGE"
+    ],
+    [
+      273,
+      112,
+      0,
+      147,
+      0,
+      "CUSTOM"
+    ],
+    [
+      280,
+      60,
+      0,
+      147,
+      3,
+      "INT"
+    ],
+    [
+      288,
+      152,
+      0,
+      154,
+      0,
+      "STRING"
+    ],
+    [
+      297,
+      148,
+      0,
+      147,
+      2,
+      "STRING"
+    ],
+    [
+      299,
+      158,
+      0,
+      152,
+      0,
+      "STRING"
+    ],
+    [
+      300,
+      154,
+      0,
+      147,
+      1,
+      "STRING"
+    ],
+    [
+      302,
+      147,
+      0,
+      150,
+      0,
+      "STRING"
+    ],
+    [
+      303,
+      107,
+      2,
+      152,
+      1,
+      "STRING"
+    ],
+    [
+      304,
+      120,
+      0,
+      154,
+      1,
+      "STRING"
+    ],
+    [
+      305,
+      147,
+      0,
+      30,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Prompt Generator",
+      "bounding": [
+        301,
+        -728,
+        1133,
+        678
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Captioner",
+      "bounding": [
+        -756,
+        -742,
+        1014,
+        708
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "CogVideoX Inference",
+      "bounding": [
+        -382,
+        32,
+        1449,
+        659
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Resize and pad Image",
+      "bounding": [
+        -763,
+        29,
+        346,
+        262
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        61.46166204707947,
+        1081.1056029298775
+      ]
+    },
+    "info": {
+      "name": "workflow",
+      "author": "",
+      "description": "",
+      "version": "1",
+      "created": "2024-09-19T14:18:29.837Z",
+      "modified": "2024-09-22T19:09:23.995Z",
+      "software": "ComfyUI"
+    },
+    "workspace_info": {
+      "id": "5S0zV-fIL-Xq3Oyvi_RIp",
+      "saveLock": false,
+      "cloudID": null,
+      "coverMediaPath": null
+    }
+  },
+  "version": 0.4
+}
